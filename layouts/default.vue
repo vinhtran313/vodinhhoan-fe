@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h1>This is layout</h1>
     <LayoutsHeader></LayoutsHeader>
     <Nuxt />
+    <LayoutsFooter></LayoutsFooter>
   </div>
 </template>
 
