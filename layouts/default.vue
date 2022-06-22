@@ -1,13 +1,15 @@
 <template>
-  <div>
-    <h1>This is layout</h1>
-    <LayoutsHeader></LayoutsHeader>
-    <Nuxt />
-  </div>
+	<div>
+		<LayoutsDefaultHeader></LayoutsDefaultHeader>
+		<Nuxt />
+	</div>
 </template>
 
 <script>
 </script>
 
 <style>
+body {
+	background-color: #171717;
+}
 </style>

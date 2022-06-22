@@ -1,6 +1,5 @@
 <template>
-  <div class="container">
-	<img src="../static/logo.jpg" alt="" class="title">
+  <div>
   </div>
 </template>
 
