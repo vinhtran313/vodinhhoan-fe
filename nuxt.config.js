@@ -19,7 +19,10 @@ export default {
 
 	// Global CSS: https://go.nuxtjs.dev/config-css
 	css: [
-		'@fortawesome/fontawesome-svg-core/styles.css'
+		'@fortawesome/fontawesome-svg-core/styles.css',
+		'~assets/scss/_variables.scss',
+		'~assets/scss/_mixins.scss',
+		'@/assets/scss/main.scss'
 	],
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
