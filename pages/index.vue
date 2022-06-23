@@ -1,8 +1,16 @@
 <template>
 	<div class="home-wrapper">
 		<div class="logo-fullwidth">
-			<div class="logo">
-				<img src="~static/2.png" alt="">
+			<div class="logo-mask">
+				<div class="logo-part-a">
+					<img src="~static/logo-part-A.png" alt="">
+				</div>
+				<div class="logo-part-b">
+					<img src="~static/logo-part-B.png" alt="">
+				</div>
+				<div class="logo-part-c">
+					<img src="~static/logo-part-C.png" alt="">
+				</div>
 			</div>
 		</div>
 	</div>
@@ -17,15 +25,40 @@ export default {
 	methods: {
 		setAnimation() {
 			this.$anime({
-				targets: '.logo',
+				targets: '.logo-part-a',
 				easing: "easeOutExpo",
-				duration: 10000,
+				duration: 7000,
 				delay: 1000,
-				top: '50%',
-				left: '50%',
+				left: ['5rem', 'calc(50% - 10rem)'],
+				translateY: ['-50%', '-50%'],
+				opacity: [0, 1],
 				translateX: '-50%',
-				translateY: '-50%',
-				rotateX: '1turn',
+			})
+			this.$anime({
+				targets: '.logo-part-c',
+				easing: "easeOutExpo",
+				duration: 7000,
+				delay: 1000,
+				right: ['5rem', 'calc(50% - 20rem)'],
+				opacity: [0, 1],
+				translateY: ['-50%', '-50%'],
+				translateX: '-50%',
+			})
+			this.$anime({
+				targets: '.logo-part-b',
+				easing: "easeOutExpo",
+				duration: 7000,
+				delay: 1000,
+				top: ['150rem', '50%'],
+				opacity: [0, 1],
+				translateY: ['-50%', '-50%'],
+			})
+			this.$anime({
+				targets: '.logo-mask',
+				easing: "easeOutExpo",
+				duration: 7000,
+				delay: 1000,
+				background: ['transparent', 'hsla(0, 0%, 0%, 0.3)']
 			})
 		}
 	}
@@ -38,7 +71,7 @@ export default {
 
 	.logo-fullwidth {
 		width: 100%;
-		height: 1080px;
+		height: 100vh;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -48,17 +81,46 @@ export default {
 		background-repeat: no-repeat;
 		background-size: cover;
 
-		.logo {
-			width: 600px;
-			background: transparent;
+		.logo-mask {
+			width: 100%;
+			height: 15rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			// background: $logo-mask-bg;
+			position: relative;
+		}
+
+		.logo-part-a,
+		.logo-part-b,
+		.logo-part-c {
+			width: 10rem;
+			aspect-ratio: 1/1;
 			position: absolute;
-			top: 10%;
-			left: 10%;
 
 			img {
 				max-width: 100%;
-				background-color: transparent;
 			}
+		}
+
+		.logo-part-a {
+			opacity: 0;
+			left: 5rem;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		.logo-part-c {
+			opacity: 0;
+			top: 50%;
+			right: 5rem;
+			transform: translateY(-50%);
+		}
+
+		.logo-part-b {
+			opacity: 0;
+			top: 1000rem;
+			transform: translateY(-50%);
 		}
 
 	}

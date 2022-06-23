@@ -47,6 +47,8 @@ export default {};
 		text-decoration: none;
 		font-size: 1rem;
 		transition: all 0.2s ease-in-out;
+		font-weight: bold;
+		background: transparent;
 
 		&:hover {
 			color: $header-item-color__on-hover;
